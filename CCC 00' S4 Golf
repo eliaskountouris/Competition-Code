@@ -1,0 +1,25 @@
+dist = int(input())
+n = int(input())
+clubs = [int(input().strip()) for x in range(n)]
+
+def solve(dist,n,clubs):
+  f = [None] * (dist+1)
+  min = 0
+  t = 0
+  f[0] = 0
+  for i in range(0,dist-1):
+    min=99999
+    for j in range(n):
+      t = i - clubs[j]
+      if t >= 0 and f[t]>=0 and f[t] <=min:
+        min = f[t]
+    if min<99999:
+      f[i] = min+1
+    else:
+      f[i] = -1
+  if f[dist] == -1:
+    print("Roberta acknowledges defeat.")
+  else:
+    print("Roberta wins in " + str(f[dist]) + " strokes.")
+
+solve(dist, n ,clubs)
