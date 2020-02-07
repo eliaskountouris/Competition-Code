@@ -1,0 +1,28 @@
+import math
+a = int(input().strip())
+
+x=[None]*a
+y = [None]*a
+ax, ay = 0, 0
+
+for i in range(0,a):
+  x[i], y[i] = input().split()
+  x[i] = int(x[i])
+  y[i] = int(y[i])
+  ay += y[i]
+  ax += x[i]
+
+def dist(x1, y1, x2, y2):
+  d1 = x1-x2
+  d2 = y1 - y2
+  return math.sqrt((d1*d1)+(d2*d2))
+
+ax /= a
+ay /= a
+
+larg = 0
+for i in range(a):
+  if larg < dist(ax,ay,x[i],y[i]):
+    larg =  dist(ax,ay,x[i],y[i])
+
+print(round(2*larg,2))
