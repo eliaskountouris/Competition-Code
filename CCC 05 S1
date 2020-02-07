@@ -1,20 +1,26 @@
+import sys
+input = sys.stdin.readline
+
 a = int(input())
 
-dict = {'A':2, 'B':2, 'C':2, 'D':3,'E':3,'F':3,'G':4,'H':4,'I':4, 'J':5, 'K':5,'L':5,'M':6,'N':6,'O':6,'P':7,'Q':7,'R':7,'S':7,'T':8,'U':8,'V':8,'W':9,'X':9,'Y':9,'Z':9}
+dicti = {'A':2, 'B':2, 'C':2, 'D':3,'E':3,'F':3,'G':4,'H':4,'I':4, 'J':5, 'K':5,'L':5,'M':6,'N':6,'O':6,'P':7,'Q':7,'R':7,'S':7,'T':8,'U':8,'V':8,'W':9,'X':9,'Y':9,'Z':9}
 
-for j in range(0,a):
-  s = str(input())
+for j in range(a):
+  s = input().strip()
   n = [None]*12
   b=0
-  for x in range(0,12):
+  for x in range(12):
     if s[x]!='-':
       if s[x].isalpha():
-        n[x-b] = str(dict[s[x]])
+        n[x-b] = str(dicti[s[x]])
       else:
         n[x-b] = str(s[x])
     else:
       b+=1
   
   print(n[0] + n[1] + n[2] + "-" + n[3] + n[4] + n[5]+'-'+n[6] + n[7] + n[8] + n[9])
+
+
+
 
 
