@@ -1,0 +1,31 @@
+a = int(input())
+b = int(input())
+
+c = int(a/b)
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def red(numer, denom):
+    if denom == 0:
+        return "Division by 0 - result undefined"
+    common_divisor = gcd(numer, denom)
+    (reduced_num, reduced_den) = (numer / common_divisor, denom / common_divisor)
+
+    if common_divisor == 1:
+      return (numer, denom)
+    else:
+      return (reduced_num, reduced_den)
+    
+d = a%b
+if d!=0:
+  if c!=0:
+    d, b = red(d,b)
+    print(str(c) + ' ' + str(int(d)) + '/' + str(int(b)))
+  else:
+    d, b = red(d,b)
+    print(str(int(d)) + '/' + str(int(b)))
+else:
+  print(c)
