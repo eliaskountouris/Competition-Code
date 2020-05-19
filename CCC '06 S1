@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+char m[11];
+char f[11];
+
+bool cap(char a){
+  if (isupper(a)){
+    return true;
+  }
+  return false;
+}
+
+bool test(char m[11], char f[11], char b[6]){
+  bool s = true;
+  for (int i = 0; i<5 && s; i++){
+    if (cap(b[i])){
+      s = cap(m[i*2]) || cap(m[i*2 +1]) || cap(f[i*2]) || cap(f[i*2 +1]);
+    }
+    else {
+      s = (!cap(m[i*2]) && !cap(m[i*2+1])) || (!cap(f[i*2]) && !cap(f[i*2+1]));
+    }
+  }
+  return s;
+}
+
+int main() {
+  int n;
+  cin >> m;
+  cin >> f;
+  cin>>n;
+  char b[6];
+  for (int i = 0; i < n; i++){
+    cin >> b;
+    if (test(m, f, b)) {
+      printf("Possible baby.\n");
+    }
+    else{
+      printf("Not their baby!\n");
+    }
+  }
+}
