@@ -1,0 +1,20 @@
+n = int(input())
+for i in range(n):
+  y, m, d = input().split()
+  y=int(y)
+  m=int(m)
+  d=int(d)
+  ok = True
+  if (y == 1989):
+    if (m == 2):
+      if (d > 27):
+        ok = False
+    elif(m>2):
+      ok = False
+  elif(y>1989):
+    ok = False
+
+  if (ok):
+    print("Yes")
+  else:
+    print("No")
