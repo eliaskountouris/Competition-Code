@@ -1,0 +1,30 @@
+n = int(input())
+b = {"":-999}
+f = ""
+s = ""
+for i in range(n):
+  name, R, C, D = input().split()
+  R = int(R)
+  C = int(C)
+  D = int(D)
+  total = 2*R + 3*C + D
+  b[name] = total
+  if b[name] > b[s]:
+    if b[name] > b[f]:
+      s = f
+      f = name
+    else:
+      s = name
+
+if b[f] != b[s]:
+  print(f)
+  print(s)
+else:
+  l = [f, s]
+  res = min(filter(lambda s:isinstance(s, str), l))
+  if res == f:
+    print(f) 
+    print(s)
+  else:
+    print(s)
+    print(f)
