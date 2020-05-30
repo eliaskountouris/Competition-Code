@@ -1,0 +1,16 @@
+n  = int(input())
+s = []
+for i in range(n):
+  s.append(i+1)
+
+m = int(input())
+for i in range(m):
+  c = int(input())
+  k = []
+  for j in range(len(s)):
+    if ((j+1) % c != 0):
+      k.append(s[j])
+  s = k
+
+for i in range(len(s)):
+  print(s[i])
