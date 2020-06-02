@@ -1,0 +1,17 @@
+n = int(input())
+a = 0
+b = 0
+m = 0
+al = input().split()
+bl = input().split()
+for i in range(n):
+  al[i] = int(al[i])
+  bl[i] = int(bl[i])
+
+for i in range(1, n+1):
+  a+= al[i-1]
+  b+= bl[i-1]
+  if a == b:
+    m = i
+
+print(m)
