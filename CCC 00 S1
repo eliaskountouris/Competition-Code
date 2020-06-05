@@ -1,0 +1,29 @@
+n = int(input())
+a = int(input())
+b = int(input())
+c = int(input())
+t=0
+while (n>0):
+  t+=1
+  if t%3==1:
+    a+=1
+    n-=1
+    if a==35:
+      a=0
+      n+=30
+  elif t%3==2:
+    b+=1
+    n-=1
+    if b==100:
+      b=0
+      n+=60
+  elif t%3==0:
+    c+=1
+    n-=1
+    if c==10:
+      c=0
+      n+=9
+
+
+print("Martha plays " + str(t) + " times before going broke.")
+
