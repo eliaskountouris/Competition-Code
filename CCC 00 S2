@@ -1,0 +1,32 @@
+n = int(input())
+l = []
+for i in range(n):
+  s = int(input())
+  l.append(s)
+
+s = 0
+while (s!=77):
+  s = int(input())
+  if s ==99:
+    i = int(input())
+    p = int(input())
+    p /= 100.0
+    tmp = l
+    l = l[0:i]
+    l.append(tmp[i-1])
+    l+=tmp[i:len(tmp)]
+    l[i] *= (1-p)
+    l[i-1] *= p
+  elif s == 88:
+    i = int(input())
+    tmp = l
+    l = l[0:i]
+    l[i-1]+=tmp[i]
+    l+=tmp[i+1:len(tmp)]
+
+o = ''
+for i in range(len(l)):
+  o += str(l[i])
+  o+=' '
+
+print(o)
