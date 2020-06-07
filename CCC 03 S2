@@ -1,0 +1,34 @@
+n = int(input())
+def last(s):
+  c = ''
+  n = 0
+  s = s[::-1]
+  s = s.lower()
+  while(n<len(s)):
+    if s[n]!= ' ':
+      if s[n] == 'a' or s[n] == 'e' or s[n] == 'i' or s[n] == 'u' or s[n] == 'o':
+        c+=s[n]
+        n=len(s)+1
+      else:
+        c+=s[n]
+        n+=1
+    else:
+      n=len(s)+1
+  return c
+
+for i in range(n):
+  a=last(input())
+  b = last(input())
+  c = last(input())
+  d = last(input())
+
+  if a == b == c == d:
+    print("perfect")
+  elif a==b and c==d:
+    print("even")
+  elif a==c and b==d:
+    print("cross")
+  elif a==d and b==c:
+    print("shell")
+  else:
+    print("free")
