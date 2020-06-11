@@ -1,0 +1,17 @@
+a = input()
+b = input()
+c = input()
+
+d = {}
+
+for i in range(len(a)):
+  d[b[i]] = a[i]
+
+s = ''
+for i in range(len(c)):
+  if c[i] in d:
+    s+=d[c[i]]
+  else:
+    s+='.'
+  
+print(s)
