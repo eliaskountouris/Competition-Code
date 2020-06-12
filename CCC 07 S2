@@ -1,0 +1,56 @@
+def fit(n, i):
+  b = n.copy()
+  b.sort()
+  tb = b.copy()
+  i.sort()
+  ti = i.copy()
+  for l in range(3):
+    for j in range(len(b)):
+      if i[l] <= b[j]:
+        ti.remove(i[l])
+        b.remove(b[j])
+        break
+  if len(ti) == 0:
+    return tb[0]*tb[1]*tb[2]
+  else:
+    return 0
+
+n = int(input())
+nl = []
+l = []
+
+for i in range(n):
+  c = input().split()
+  for j in range(3):
+    c[j] = int(c[j])
+  nl.append(c)
+
+w = len(nl)
+while(w != len(l)):
+  s = 99999999999999
+  for i in range(len(nl)):
+    if nl[i][0] * nl[i][1] * nl[i][2] < s:
+      s = nl[i][0] * nl[i][1] * nl[i][2]
+      t = nl[i]
+  nl.remove(t)
+  l.append(t)
+
+m = int(input())
+ml = []
+
+for i in range(m):
+  c = input().split()
+  for j in range(3):
+    c[j] = int(c[j])
+  ml.append(c)
+
+for i in range(m):
+  s = 0
+  for j in range(n):
+    s = fit(l[j], ml[i])
+    if s != 0:
+      break
+  if s==0:
+    print("Item does not fit.")
+  else:
+    print(str(s))
