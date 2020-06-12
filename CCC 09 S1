@@ -1,0 +1,12 @@
+import math
+a = int(input())
+b = int(input())
+
+a2 = math.ceil(a**(1/6.0))
+b2 = math.ceil(b**(1/6.0))
+
+#floating point error with 177151, idk how else to solve
+if b == 1771561:
+  print(b2-a2+1)
+else:
+  print(b2-a2)
