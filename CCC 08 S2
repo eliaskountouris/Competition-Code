@@ -1,0 +1,11 @@
+import math
+r = int(input())
+while(r!=0):
+  r2 = r**2
+  p=0
+  for i in range(1,r+1):
+   p+=int(math.sqrt(r2-i**2))+1
+  p*=4
+  p+=1
+  print(p)
+  r = int(input())
