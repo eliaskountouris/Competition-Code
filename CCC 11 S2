@@ -1,0 +1,12 @@
+n = int(input())
+s = ''
+for i in range(n):
+  s+=input()
+c = ''
+for i in range(n):
+  c+=input()
+t = 0
+for i in range(n):
+  if s[i] == c[i]:
+    t+=1
+print(t)
