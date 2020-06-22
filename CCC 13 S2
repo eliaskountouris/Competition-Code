@@ -1,0 +1,17 @@
+m = int(input())
+n = int(input())
+t = 0
+c = []
+for i in range(n):
+  x = int(input())
+  c.append(x)
+w = 0
+for i in range(n):
+  if i >= 4:
+    w-=c[i-4]
+  if w+c[i] <=m:
+    w+=c[i]
+    t+=1
+  else:
+    break
+print(t)
