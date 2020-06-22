@@ -1,0 +1,17 @@
+s = input()
+d = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' :1000}
+p = 'I'
+s = s[::-1]
+i = 0
+t= 0
+while i < len(s):
+  l = s[i]
+  n = s[i+1]
+  if d[p] > d[l]:
+    t-=int(n)*d[l]
+  else:
+    t+=int(n)*d[l]
+  i+=2
+  p = l
+
+print(t)
