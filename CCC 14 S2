@@ -1,0 +1,17 @@
+a = {}
+b = {}
+n = int(input())
+al = input().split()
+bl = input().split()
+for i in range(n):
+  a[al[i]] = bl[i]
+  b[bl[i]] = al[i]
+c=0
+for i in range(n):
+  if al[i] == a[bl[i]]:
+    if al[i] != bl[i]:
+      c+=1
+if c == n:
+  print("good")
+else:
+  print("bad")
